@@ -7,6 +7,7 @@
  */
 
 @import <Foundation/CPObject.j>
+@import "MDBuilderPanel.j"
 @import "DCColor.j"
 @import "URLTextField.j"
 @import "LPAnchorButton.j"
@@ -48,112 +49,118 @@ Lucida console
     [scrollView setAutoresizingMask:CPViewWidthSizable | CPViewHeightSizable];
     [scrollView setAutohidesScrollers:YES];
 
-    [self addBackgroundImageView];
-    [self addMyPictureViewImage];
+    scrollView setDocumentView:aShadowView];
+
+    var backgroundPanel = [MDBuilderPanel buildPanelWithImageBackground:CGRectMake(100, 0, 1000, 1000)];
+    [self addSubview:backgroundPanel];
+
+
+    // [self addBackgroundImageView];
+    // [self addMyPictureViewImage];
     //[self addBubleViewWithFrame:CGRectMake(300, 200, 200, 400)];
     //[self addBluredViewWithFrame:CGRectMake(550, 200, 200, 400)];
-    [self addDetailView:CGRectMake(300, 200, 650, 600)];
+        // [self addDetailView:CGRectMake(300, 200, 650, 600)];
 
-    [self addLabel:"Maestría en Explotación de Datos y Descubrimiento del Conocimiento - U.B.A."
-            origin:CGPointMake(310, 210)
-            color:[CPColor colorWithCalibratedRed:255 / 255 green:158 / 255 blue:53 / 255 alpha:1]
-            font:[CPFont boldSystemFontOfSize:16.0]];
+        // [self addLabel:"Maestría en Explotación de Datos y Descubrimiento del Conocimiento - U.B.A."
+        //         origin:CGPointMake(310, 210)
+        //         color:[CPColor colorWithCalibratedRed:255 / 255 green:158 / 255 blue:53 / 255 alpha:1]
+        //         font:[CPFont boldSystemFontOfSize:16.0]];
 
-    [self addLabel:"Primer año completo. 6 materias aprobadas. \nMaestría en Explotación de Datos (+)"
-            origin:CGPointMake(310, 240)
-            color:[CPColor grayColor]
-            font:[CPFont boldFontWithName:@"Courier New" size:16.0]];
-
-
-    [self addLabel:"Licenciatura en Analisís de Sistema - U.B.A."
-            origin:CGPointMake(310, 280)
-            color:[CPColor colorWithCalibratedRed:255 / 255 green:158 / 255 blue:53 / 255 alpha:1]
-            font:[CPFont boldSystemFontOfSize:16.0]];
-
-    [self addLabel:"Título de Lic. en Análisis de Sistema.(+) \nen la Facultad de Ingeniería de la Universidad de Buenos Aires."
-            origin:CGPointMake(310, 300)
-            color:[CPColor whiteColor]
-            font:[CPFont boldFontWithName:@"Courier New" size:16.0]];
+        // [self addLabel:"Primer año completo. 6 materias aprobadas. \nMaestría en Explotación de Datos (+)"
+        //         origin:CGPointMake(310, 240)
+        //         color:[CPColor grayColor]
+        //         font:[CPFont boldFontWithName:@"Courier New" size:16.0]];
 
 
-    [self addLabel:"Neque quisquam est qui dolorem ipsum quia dolor sit amet, consectetur"
-            origin:CGPointMake(310, 400)
-            color:[DCColor goldenColor]
-            font:[CPFont boldSystemFontOfSize:16.0]];
+        // [self addLabel:"Licenciatura en Analisís de Sistema - U.B.A."
+        //         origin:CGPointMake(310, 280)
+        //         color:[CPColor colorWithCalibratedRed:255 / 255 green:158 / 255 blue:53 / 255 alpha:1]
+        //         font:[CPFont boldSystemFontOfSize:16.0]];
 
-    [self addLabel:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nVivamus tristique rhoncus dignissim. Aliquam erat volutpat. \nNullam tempus, nunc in auctor sagittis, neque urna molestie leo, \nac vehicula enim felis at tortor. Nulla facilisi. \nMaecenas adipiscing hendrerit quam, quis sollicitudin felis \ncondimentum nec. Phasellus blandit felis ac nunc vulputate eget \npretium metus cursus. Pellentesque et neque sit amet eros \ncongue tempus nec vitae leo."
-            origin:CGPointMake(310, 430)
-            color:[CPColor whiteColor]
-            font:[CPFont boldFontWithName:@"Courier New" size:16.0]];
-
-
-    [self addLabel:"Diego Martín Correa"
-            origin:CGPointMake(10, 10)
-            color:[DCColor goldenColor]
-            font:[CPFont boldSystemFontOfSize:48.0]];
-
-    [self addLabel:"Software Developer, Technologist and Web Junkie"
-            origin:CGPointMake(15, 60)
-            color:[CPColor whiteColor]
-            font:[CPFont boldSystemFontOfSize:24.0]];
-
-    [self addLabel:"education"
-            origin:CGPointMake(20, 300)
-            color:[DCColor goldenColor]
-            font:[CPFont boldSystemFontOfSize:48.0]];
-
-    [self addLabel:"intership"
-            origin:CGPointMake(20, 500)
-            color:[DCColor goldenColor]
-            font:[CPFont boldSystemFontOfSize:48.0]];
-
-    [self addLabel:"personal \n      skills"
-            origin:CGPointMake(20, 800)
-            color:[DCColor goldenColor]
-            font:[CPFont boldSystemFontOfSize:48.0]];
+        // [self addLabel:"Título de Lic. en Análisis de Sistema.(+) \nen la Facultad de Ingeniería de la Universidad de Buenos Aires."
+        //         origin:CGPointMake(310, 300)
+        //         color:[CPColor whiteColor]
+        //         font:[CPFont boldFontWithName:@"Courier New" size:16.0]];
 
 
+        // [self addLabel:"Neque quisquam est qui dolorem ipsum quia dolor sit amet, consectetur"
+        //         origin:CGPointMake(310, 400)
+        //         color:[DCColor goldenColor]
+        //         font:[CPFont boldSystemFontOfSize:16.0]];
 
-    [self addLabel:"How You Can Reach Me:"
-            origin:CGPointMake(15, 950)
-            color:[CPColor whiteColor]
-            font:[CPFont boldFontWithName:@"Courier New" size:20.0]];
-
-    [self addLabel:" | "
-            origin:CGPointMake(320, 950)
-            color:[CPColor whiteColor]
-            font:[CPFont boldFontWithName:@"Courier New" size:20.0]];
-
-    var emailLabel = [LPAnchorButton buttonWithTitle:@"Email"];
-    [emailLabel setFrame:CGRectMake(270,952,150,35)];
-    // We want to the underline only when hovering
-    [emailLabel setUnderlineMask:LPAnchorButtonHoverUnderline];
-
-    // Set the colors
-    [emailLabel setTextColor:[CPColor whiteColor]];
-    [emailLabel setTextHoverColor:[CPColor colorWithHexString:@"aaa"]];
-    [emailLabel setFont:[CPFont boldFontWithName:@"Courier New" size:20.0]];
-    // Set the target & action just like a CPButton
-    [emailLabel setTarget:self];
-    [emailLabel setAction:@selector(didClickEmailMe:)];
+        // [self addLabel:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nVivamus tristique rhoncus dignissim. Aliquam erat volutpat. \nNullam tempus, nunc in auctor sagittis, neque urna molestie leo, \nac vehicula enim felis at tortor. Nulla facilisi. \nMaecenas adipiscing hendrerit quam, quis sollicitudin felis \ncondimentum nec. Phasellus blandit felis ac nunc vulputate eget \npretium metus cursus. Pellentesque et neque sit amet eros \ncongue tempus nec vitae leo."
+        //         origin:CGPointMake(310, 430)
+        //         color:[CPColor whiteColor]
+        //         font:[CPFont boldFontWithName:@"Courier New" size:16.0]];
 
 
-    var linkedinLabel = [LPAnchorButton buttonWithTitle:@"LinkedIn"];
-    [linkedinLabel setFrame:CGRectMake(350,952,150,35)];
-    // We want to the underline only when hovering
-    [linkedinLabel setUnderlineMask:LPAnchorButtonHoverUnderline];
+        // [self addLabel:"Diego Martín Correa"
+        //         origin:CGPointMake(10, 10)
+        //         color:[DCColor goldenColor]
+        //         font:[CPFont boldSystemFontOfSize:48.0]];
 
-    // Set the colors
-    [linkedinLabel setTextColor:[CPColor whiteColor]];
-    [linkedinLabel setTextHoverColor:[CPColor colorWithHexString:@"aaa"]];
-    [linkedinLabel setFont:[CPFont boldFontWithName:@"Courier New" size:20.0]];
-    // Set the target & action just like a CPButton
-    [linkedinLabel setTarget:self];
-    [linkedinLabel setAction:@selector(didClickLinkedIn:)];
+        // [self addLabel:"Software Developer, Technologist and Web Junkie"
+        //         origin:CGPointMake(15, 60)
+        //         color:[CPColor whiteColor]
+        //         font:[CPFont boldSystemFontOfSize:24.0]];
+
+        // [self addLabel:"education"
+        //         origin:CGPointMake(20, 300)
+        //         color:[DCColor goldenColor]
+        //         font:[CPFont boldSystemFontOfSize:48.0]];
+
+        // [self addLabel:"intership"
+        //         origin:CGPointMake(20, 500)
+        //         color:[DCColor goldenColor]
+        //         font:[CPFont boldSystemFontOfSize:48.0]];
+
+        // [self addLabel:"personal \n      skills"
+        //         origin:CGPointMake(20, 800)
+        //         color:[DCColor goldenColor]
+        //         font:[CPFont boldSystemFontOfSize:48.0]];
 
 
-    [backgroundView addSubview:emailLabel];
-    [backgroundView addSubview:linkedinLabel];
+
+    // [self addLabel:"How You Can Reach Me:"
+    //         origin:CGPointMake(15, 950)
+    //         color:[CPColor whiteColor]
+    //         font:[CPFont boldFontWithName:@"Courier New" size:20.0]];
+
+    // [self addLabel:" | "
+    //         origin:CGPointMake(320, 950)
+    //         color:[CPColor whiteColor]
+    //         font:[CPFont boldFontWithName:@"Courier New" size:20.0]];
+
+    // var emailLabel = [LPAnchorButton buttonWithTitle:@"Email"];
+    // [emailLabel setFrame:CGRectMake(270,952,150,35)];
+    // // We want to the underline only when hovering
+    // [emailLabel setUnderlineMask:LPAnchorButtonHoverUnderline];
+
+    // // Set the colors
+    // [emailLabel setTextColor:[CPColor whiteColor]];
+    // [emailLabel setTextHoverColor:[CPColor colorWithHexString:@"aaa"]];
+    // [emailLabel setFont:[CPFont boldFontWithName:@"Courier New" size:20.0]];
+    // // Set the target & action just like a CPButton
+    // [emailLabel setTarget:self];
+    // [emailLabel setAction:@selector(didClickEmailMe:)];
+
+
+    // var linkedinLabel = [LPAnchorButton buttonWithTitle:@"LinkedIn"];
+    // [linkedinLabel setFrame:CGRectMake(350,952,150,35)];
+    // // We want to the underline only when hovering
+    // [linkedinLabel setUnderlineMask:LPAnchorButtonHoverUnderline];
+
+    // // Set the colors
+    // [linkedinLabel setTextColor:[CPColor whiteColor]];
+    // [linkedinLabel setTextHoverColor:[CPColor colorWithHexString:@"aaa"]];
+    // [linkedinLabel setFont:[CPFont boldFontWithName:@"Courier New" size:20.0]];
+    // // Set the target & action just like a CPButton
+    // [linkedinLabel setTarget:self];
+    // [linkedinLabel setAction:@selector(didClickLinkedIn:)];
+
+
+    // [backgroundView addSubview:emailLabel];
+    // [backgroundView addSubview:linkedinLabel];
 
 
     [theWindow orderFront:self];
