@@ -4,6 +4,7 @@
 */
 
 @import <Foundation/CPObject.j>
+@import "MDClickeableImageView.j"
 
 /**!
 	MDBuilderPanel creates custom panel used in CV project.
@@ -57,12 +58,15 @@
 
 	- TODO:
 */
-+ (CPImageView)buildButtonWithImageBackground:(CGRect)aFrame pathForResource:(CPString)aPath size:(CGSize)aSize//target:(id)aTarget selector:(SEL)aSelector
++ (CPImageView)buildButtonWithImageBackground:(CGRect)aFrame pathForResource:(CPString)aPath size:(CGSize)aSize target:(id)aTarget action:(SEL)aSelector
 {
     var mainBundle = [CPBundle mainBundle],
         path = [mainBundle pathForResource:aPath],
         image = [[CPImage alloc] initWithContentsOfFile:path size:aSize],
-        imageView = [[CPImageView alloc] initWithFrame:aFrame];
+        imageView = [[MDClickeableImageView alloc] initWithFrame:aFrame];
+
+	[imageView setTarget:aTarget];
+	[imageView setAction:aSelector];
 
     [imageView setHasShadow:NO];
     [imageView setImageScaling:CPScaleProportionally];
@@ -71,5 +75,17 @@
     [imageView setImage:image];
 
 	return imageView;
+}
+
+/*!
+
+*/
++ (void)moveViewWithAnimation:(CPView)aView startFrame:(CGRect)aStartFrame endFrame:(CGRect)anEndFrame
+{
+    var animation = [CPDictionary dictionaryWithObjects:[aView, aStartFrame, anEndFrame, CPViewAnimationEffectKey]
+                                                forKeys:[CPViewAnimationTargetKey, CPViewAnimationStartFrameKey, CPViewAnimationEndFrameKey, CPViewAnimationEffectKey]],
+        cpViewAnimation = [[CPViewAnimation alloc] initWithViewAnimations:[animation]];
+
+    [cpViewAnimation startAnimation];
 }
 @end

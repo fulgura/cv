@@ -54,20 +54,25 @@ Lucida console
     var backgroundPanel = [MDBuilderPanel buildPanelWithImageBackground:bounds/*CGRectMake(100, 0, 1000, 1000)*/];
     [scrollView setDocumentView:backgroundPanel];
 
-    var anImageView = [MDBuilderPanel buildButtonWithImageBackground:CGRectMake(700, 0, 200, 200)
-                                      pathForResource:@"my.jpg"
-                                      size:CGSizeMake(490, 337)];
-    [backgroundPanel addSubview:anImageView];
+    // var anImageView = [MDBuilderPanel buildButtonWithImageBackground:CGRectMake(700, 0, 200, 200)
+    //                                   pathForResource:@"my.jpg"
+    //                                   size:CGSizeMake(490, 337)];
+    // [backgroundPanel addSubview:anImageView];
 
 
     var aLeftButton = [MDBuilderPanel buildButtonWithImageBackground:CGRectMake(100, 300, 64, 64)
                                       pathForResource:@"arrow-left-icon-64x64.png"
-                                      size:CGSizeMake(64, 64)];
+                                      size:CGSizeMake(64, 64)
+                                      target:self
+                                      action:@selector(leftSwap:)];
     [backgroundPanel addSubview:aLeftButton];
 
     var aRightButton = [MDBuilderPanel buildButtonWithImageBackground:CGRectMake(1000, 300, 64, 64)
                                       pathForResource:@"arrow-right-icon-64x64.png"
-                                      size:CGSizeMake(64, 64)];
+                                      size:CGSizeMake(64, 64)
+                                      target:self
+                                      action:@selector(rightSwap:)];
+
     [backgroundPanel addSubview:aRightButton];
 
 
@@ -184,6 +189,17 @@ Lucida console
     [theWindow orderFront:self];
 }
 
+- (void)rightSwap:(id)sender
+{
+    console.log('doubleClick');
+
+}
+
+- (void)leftSwap:(id)sender
+{
+    console.log('doubleClick');
+}
+
 - (void)didClickEmailMe:(id)aSender
 {
     window.open ("mailto:diegomartincorrea@gmail.com?cc=a_e_r_e_a@yahoo.com.ar&subject=Job offer","email");
@@ -280,6 +296,4 @@ Lucida console
     [label setAutoresizingMask:CPViewMinXMargin | CPViewMaxXMargin | CPViewMinYMargin | CPViewMaxYMargin];
     [backgroundView addSubview:label];
 }
-
-
 @end
