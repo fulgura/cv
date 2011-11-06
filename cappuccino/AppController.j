@@ -42,17 +42,35 @@ Lucida console
 
     contentView = [theWindow contentView];
     bounds = [contentView bounds];
-    bounds.size.height -= 10.0;
+    // bounds.size.height -= 10.0;
 
     scrollView = [[CPScrollView alloc] initWithFrame:bounds];
     [contentView addSubview:scrollView];
     [scrollView setAutoresizingMask:CPViewWidthSizable | CPViewHeightSizable];
     [scrollView setAutohidesScrollers:YES];
 
-    scrollView setDocumentView:aShadowView];
+    // [scrollView setDocumentView:aShadowView];
 
-    var backgroundPanel = [MDBuilderPanel buildPanelWithImageBackground:CGRectMake(100, 0, 1000, 1000)];
-    [self addSubview:backgroundPanel];
+    var backgroundPanel = [MDBuilderPanel buildPanelWithImageBackground:bounds/*CGRectMake(100, 0, 1000, 1000)*/];
+    [scrollView setDocumentView:backgroundPanel];
+
+    var anImageView = [MDBuilderPanel buildButtonWithImageBackground:CGRectMake(700, 0, 200, 200)
+                                      pathForResource:@"my.jpg"
+                                      size:CGSizeMake(490, 337)];
+    [backgroundPanel addSubview:anImageView];
+
+
+    var aLeftButton = [MDBuilderPanel buildButtonWithImageBackground:CGRectMake(100, 300, 64, 64)
+                                      pathForResource:@"arrow-left-icon-64x64.png"
+                                      size:CGSizeMake(64, 64)];
+    [backgroundPanel addSubview:aLeftButton];
+
+    var aRightButton = [MDBuilderPanel buildButtonWithImageBackground:CGRectMake(1000, 300, 64, 64)
+                                      pathForResource:@"arrow-right-icon-64x64.png"
+                                      size:CGSizeMake(64, 64)];
+    [backgroundPanel addSubview:aRightButton];
+
+
 
 
     // [self addBackgroundImageView];
