@@ -34,6 +34,10 @@ Lucida console
     CPView contentView;
     CPScrollView scrollView;
     CGRect bounds;
+
+
+    CPView backgroundPanel;
+    CPView detailsPanel;
 }
 
 - (void)applicationDidFinishLaunching:(CPNotification)aNotification
@@ -49,9 +53,7 @@ Lucida console
     [scrollView setAutoresizingMask:CPViewWidthSizable | CPViewHeightSizable];
     [scrollView setAutohidesScrollers:YES];
 
-    // [scrollView setDocumentView:aShadowView];
-
-    var backgroundPanel = [MDBuilderPanel buildPanelWithImageBackground:bounds/*CGRectMake(100, 0, 1000, 1000)*/];
+    backgroundPanel = [MDBuilderPanel buildPanelWithImageBackground:bounds/*CGRectMake(100, 0, 1000, 1000)*/];
     [scrollView setDocumentView:backgroundPanel];
 
     // var anImageView = [MDBuilderPanel buildButtonWithImageBackground:CGRectMake(700, 0, 200, 200)
@@ -75,6 +77,10 @@ Lucida console
 
     [backgroundPanel addSubview:aRightButton];
 
+    detailsPanel = [[CPView alloc] initWithFrame:CGRectMake(0,0,1,1)];
+    [detailsPanel setBackgroundColor:[CPColor whiteColor]];
+
+    [backgroundPanel addSubview:detailsPanel];
 
 
 
@@ -191,13 +197,14 @@ Lucida console
 
 - (void)rightSwap:(id)sender
 {
-    console.log('doubleClick');
-
+    [MDBuilderPanel moveViewWithAnimation:detailsPanel startFrame:CGRectMake(200,50,0,600)
+                                                         endFrame:CGRectMake(200,50,750,600)];
 }
 
 - (void)leftSwap:(id)sender
 {
-    console.log('doubleClick');
+    [MDBuilderPanel moveViewWithAnimation:detailsPanel startFrame:CGRectMake(200,50,750,600)//[detailsPanel frame]
+                                                         endFrame:CGRectMake(200,50,0,600)];
 }
 
 - (void)didClickEmailMe:(id)aSender
