@@ -70,7 +70,7 @@ Lucida console
     [backgroundPanel addSubview:aLeftButton];
 
     var aRightButton = [MDBuilderPanel buildButtonWithImageBackground:CGRectMake(1000, 300, 64, 64)
-                                      pathForResource:@"arrow-right-icon-64x64.png"
+                                      pathForResource:@"next-sail-icon-48x48.png"
                                       size:CGSizeMake(64, 64)
                                       target:self
                                       action:@selector(rightSwap:)];
@@ -160,18 +160,18 @@ Lucida console
     //         color:[CPColor whiteColor]
     //         font:[CPFont boldFontWithName:@"Courier New" size:20.0]];
 
-    // var emailLabel = [LPAnchorButton buttonWithTitle:@"Email"];
-    // [emailLabel setFrame:CGRectMake(270,952,150,35)];
-    // // We want to the underline only when hovering
-    // [emailLabel setUnderlineMask:LPAnchorButtonHoverUnderline];
+    var emailLabel = [LPAnchorButton buttonWithTitle:@"Email"];
+    [emailLabel setFrame:CGRectMake(270,100,150,35)];
+    // We want to the underline only when hovering
+    [emailLabel setUnderlineMask:LPAnchorButtonHoverUnderline];
 
-    // // Set the colors
-    // [emailLabel setTextColor:[CPColor whiteColor]];
-    // [emailLabel setTextHoverColor:[CPColor colorWithHexString:@"aaa"]];
-    // [emailLabel setFont:[CPFont boldFontWithName:@"Courier New" size:20.0]];
-    // // Set the target & action just like a CPButton
-    // [emailLabel setTarget:self];
-    // [emailLabel setAction:@selector(didClickEmailMe:)];
+    // Set the colors
+    [emailLabel setTextColor:[CPColor whiteColor]];
+    [emailLabel setTextHoverColor:[CPColor colorWithHexString:@"aaa"]];
+    [emailLabel setFont:[CPFont boldFontWithName:@"Courier New" size:20.0]];
+    // Set the target & action just like a CPButton
+    [emailLabel setTarget:self];
+    [emailLabel setAction:@selector(didClickEmailMe:)];
 
 
     // var linkedinLabel = [LPAnchorButton buttonWithTitle:@"LinkedIn"];
@@ -188,7 +188,7 @@ Lucida console
     // [linkedinLabel setAction:@selector(didClickLinkedIn:)];
 
 
-    // [backgroundView addSubview:emailLabel];
+    [backgroundPanel addSubview:emailLabel];
     // [backgroundView addSubview:linkedinLabel];
 
 
