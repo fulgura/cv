@@ -93,7 +93,7 @@ function printResults(configuration)
     print("----------------------------");
 }
 
-task("deploy-pages", ["deploy"], function() {
+task("deploy-pages", /*["deploy"],*/ function() {
 
     // OS.system(buildCmd([["cd", "Build/Release/website/"], ["ls", "-lsa"]]));
 
