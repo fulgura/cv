@@ -103,7 +103,7 @@ task("deploy-pages", ["deploy"], function() {
 
     OS.system(buildCmd([["cp", "-R","Build/Release/", tempFolder]]));
 
-    OS.system(buildCmd([["git", "checkout","gh-pages"], ["ls", "-lsa", tempFolder + "/" + projectName], ["pwd"], ["cp", "-R", tempFolder + "/" + projectName, "../"  + projectName],["git", "add","."], ["git", "commit", "-m", commitMessage],["git", "push","origin","gh-pages"]]));
+    OS.system(buildCmd([["git", "checkout","gh-pages"], ["cp", "-R", tempFolder + "/" + projectName, "../"  + projectName],["git", "add","."], ["git", "commit", "-m", commitMessage],["git", "push","origin","gh-pages"]]));
 
     colorPrint("Cleaning", "green");
     OS.system(buildCmd([["git", "checkout","master"], ["rm", "-r", tempFolder]]));
