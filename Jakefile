@@ -93,20 +93,19 @@ function printResults(configuration)
     print("----------------------------");
 }
 
-task("deploy-pages", ["deploy"], function() {
+task("deploy-pages", /*["deploy"],*/ function() {
 
     // OS.system(buildCmd([["cd", "Build/Release/website/"], ["ls", "-lsa"]]));
 
     var projectName = "cv",
-        commitMessage = "\"Pushing a new version of the web site\"",
-        tempFolder = "../Pages";
+        commitMessage = "\"Pushing a new version of the web site\"";
 
-    OS.system(buildCmd([["cp", "-R","Build/Release/", tempFolder]]));
+    OS.system(buildCmd([["cp", "-R","Build/Release/", "../Pages"]]));
 
-    OS.system(buildCmd([["git", "checkout","gh-pages"], ["cp", "-R", tempFolder + "/" + projectName, "../"  + projectName],["git", "add","."], ["git", "commit", "-m", commitMessage],["git", "push","origin","gh-pages"]]));
+    OS.system(buildCmd([["git", "checkout","gh-pages"], ["ls", "-lsa", "../Pages/" + projectName], ["pwd"], ["cp", "-R","../Pages/cv/", "../"  + projectName],["git", "add","."], ["git", "commit", "-m", commitMessage],["git", "push","origin","gh-pages"]]));
 
     colorPrint("Cleaning", "green");
-    OS.system(buildCmd([["git", "checkout","master"], ["rm", "-r", tempFolder]]));
+    OS.system(buildCmd([["git", "checkout","master"], ["rm", "-r", "../Pages"]]));
     colorPrint("Everything was okay", "green");
 
 });
