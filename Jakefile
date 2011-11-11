@@ -99,7 +99,7 @@ task("deploy-pages", /*["deploy"],*/ function() {
 
     var projectName = "cv",
         commitMessage = "\"Pushing a new version of the web site\"",
-        tempFolder = "../../Pages";
+        tempFolder = "../Pages";
 
     OS.system(buildCmd([["cp", "-R","Build/Release/", tempFolder]]));
 
