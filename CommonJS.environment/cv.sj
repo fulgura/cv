@@ -1,4 +1,4 @@
-@STATIC;1.0;p;15;AppController.jt;6479;@STATIC;1.0;I;21;Foundation/CPObject.ji;16;MDBuilderPanel.ji;9;DCColor.ji;14;URLTextField.ji;16;LPAnchorButton.jt;6360;
+@STATIC;1.0;p;15;AppController.jt;6814;@STATIC;1.0;I;21;Foundation/CPObject.ji;16;MDBuilderPanel.ji;9;DCColor.ji;14;URLTextField.ji;16;LPAnchorButton.jt;6695;
 objj_executeFile("Foundation/CPObject.j",NO);
 objj_executeFile("MDBuilderPanel.j",YES);
 objj_executeFile("DCColor.j",YES);
@@ -22,11 +22,12 @@ var _7=objj_msgSend(MDBuilderPanel,"buildButtonWithImageBackground:pathForResour
 objj_msgSend(backgroundPanel,"addSubview:",_7);
 var _8=objj_msgSend(MDBuilderPanel,"buildButtonWithImageBackground:pathForResource:size:target:action:",CGRectMake(1000,300,64,64),"next-sail-icon-48x48.png",CGSizeMake(64,64),_3,sel_getUid("rightSwap:"));
 objj_msgSend(backgroundPanel,"addSubview:",_8);
-detailsPanel=objj_msgSend(objj_msgSend(CPView,"alloc"),"initWithFrame:",CGRectMake(0,0,1,1));
-objj_msgSend(detailsPanel,"setBackgroundColor:",objj_msgSend(CPColor,"whiteColor"));
+detailsPanel=objj_msgSend(objj_msgSend(CPView,"alloc"),"initWithFrame:",CGRectMake(200,50,750,600));
+objj_msgSend(_3,"addLabel:origin:color:font:inView:","Diego Martín Correa",CGPointMake(10,10),objj_msgSend(DCColor,"goldenColor"),objj_msgSend(CPFont,"boldSystemFontOfSize:",48),detailsPanel);
+objj_msgSend(_3,"addLabel:origin:color:font:inView:","Software Developer, Technologist and Web Junkie",CGPointMake(15,60),objj_msgSend(CPColor,"whiteColor"),objj_msgSend(CPFont,"boldSystemFontOfSize:",24),detailsPanel);
 objj_msgSend(backgroundPanel,"addSubview:",detailsPanel);
 var _9=objj_msgSend(LPAnchorButton,"buttonWithTitle:","Email");
-objj_msgSend(_9,"setFrame:",CGRectMake(270,100,150,35));
+objj_msgSend(_9,"setFrame:",CGRectMake(100,500,150,35));
 objj_msgSend(_9,"setUnderlineMask:",LPAnchorButtonHoverUnderline);
 objj_msgSend(_9,"setTextColor:",objj_msgSend(CPColor,"whiteColor"));
 objj_msgSend(_9,"setTextHoverColor:",objj_msgSend(CPColor,"colorWithHexString:","aaa"));
@@ -88,16 +89,16 @@ objj_msgSend(backgroundView,"addSubview:",_2a);
 }),new objj_method(sel_getUid("addBluredViewWithFrame:"),function(_2b,_2c,_2d){
 with(_2b){
 }
-}),new objj_method(sel_getUid("addLabel:origin:color:font:"),function(_2e,_2f,_30,_31,_32,_33){
+}),new objj_method(sel_getUid("addLabel:origin:color:font:inView:"),function(_2e,_2f,_30,_31,_32,_33,_34){
 with(_2e){
-var _34=objj_msgSend(objj_msgSend(CPTextField,"alloc"),"initWithFrame:",CGRectMakeZero());
-objj_msgSend(_34,"setStringValue:",_30);
-objj_msgSend(_34,"setFont:",_33);
-objj_msgSend(_34,"setTextColor:",_32);
-objj_msgSend(_34,"sizeToFit");
-objj_msgSend(_34,"setFrameOrigin:",_31);
-objj_msgSend(_34,"setAutoresizingMask:",CPViewMinXMargin|CPViewMaxXMargin|CPViewMinYMargin|CPViewMaxYMargin);
-objj_msgSend(backgroundView,"addSubview:",_34);
+var _35=objj_msgSend(objj_msgSend(CPTextField,"alloc"),"initWithFrame:",CGRectMakeZero());
+objj_msgSend(_35,"setStringValue:",_30);
+objj_msgSend(_35,"setFont:",_33);
+objj_msgSend(_35,"setTextColor:",_32);
+objj_msgSend(_35,"sizeToFit");
+objj_msgSend(_35,"setFrameOrigin:",_31);
+objj_msgSend(_35,"setAutoresizingMask:",CPViewMinXMargin|CPViewMaxXMargin|CPViewMinYMargin|CPViewMaxYMargin);
+objj_msgSend(_34,"addSubview:",_35);
 }
 })]);
 p;9;DCColor.jt;509;@STATIC;1.0;t;491;
