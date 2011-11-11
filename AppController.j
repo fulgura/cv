@@ -77,8 +77,22 @@ Lucida console
 
     [backgroundPanel addSubview:aRightButton];
 
-    detailsPanel = [[CPView alloc] initWithFrame:CGRectMake(0,0,1,1)];
-    [detailsPanel setBackgroundColor:[CPColor whiteColor]];
+    detailsPanel = [[CPView alloc] initWithFrame:CGRectMake(200,50,750,600)];
+    // [detailsPanel setBackgroundColor:[CPColor whiteColor]];
+
+    [self addLabel:"Diego Martín Correa"
+            origin:CGPointMake(10, 10)
+            color:[DCColor goldenColor]
+            font:[CPFont boldSystemFontOfSize:48.0]
+            inView:detailsPanel];
+
+    [self addLabel:"Software Developer, Technologist and Web Junkie"
+            origin:CGPointMake(15, 60)
+            color:[CPColor whiteColor]
+            font:[CPFont boldSystemFontOfSize:24.0]
+            inView:detailsPanel];
+
+
 
     [backgroundPanel addSubview:detailsPanel];
 
@@ -123,15 +137,6 @@ Lucida console
         //         font:[CPFont boldFontWithName:@"Courier New" size:16.0]];
 
 
-        // [self addLabel:"Diego Martín Correa"
-        //         origin:CGPointMake(10, 10)
-        //         color:[DCColor goldenColor]
-        //         font:[CPFont boldSystemFontOfSize:48.0]];
-
-        // [self addLabel:"Software Developer, Technologist and Web Junkie"
-        //         origin:CGPointMake(15, 60)
-        //         color:[CPColor whiteColor]
-        //         font:[CPFont boldSystemFontOfSize:24.0]];
 
         // [self addLabel:"education"
         //         origin:CGPointMake(20, 300)
@@ -161,7 +166,7 @@ Lucida console
     //         font:[CPFont boldFontWithName:@"Courier New" size:20.0]];
 
     var emailLabel = [LPAnchorButton buttonWithTitle:@"Email"];
-    [emailLabel setFrame:CGRectMake(270,100,150,35)];
+    [emailLabel setFrame:CGRectMake(100,500,150,35)];
     // We want to the underline only when hovering
     [emailLabel setUnderlineMask:LPAnchorButtonHoverUnderline];
 
@@ -289,7 +294,7 @@ Lucida console
 
 }
 
-- (void)addLabel:(CPString)aLabelString origin:(CGPoint)aFrameOrigin color:(CPColor)aColor font:(CPFont)aFont
+- (void)addLabel:(CPString)aLabelString origin:(CGPoint)aFrameOrigin color:(CPColor)aColor font:(CPFont)aFont inView:(CPView)aView
 {
 
     var label = [[CPTextField alloc] initWithFrame:CGRectMakeZero()];
@@ -301,6 +306,6 @@ Lucida console
 
     [label setFrameOrigin:aFrameOrigin];
     [label setAutoresizingMask:CPViewMinXMargin | CPViewMaxXMargin | CPViewMinYMargin | CPViewMaxYMargin];
-    [backgroundView addSubview:label];
+    [aView addSubview:label];
 }
 @end
